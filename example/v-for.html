@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>v-if & v-show</title>
+    <title>v-for</title>
     <script type="text/javascript" src="../assets/js/vue.js"></script>
 </head>
 <body>
-<h1>v-if 判断是否加载</h1>
+<h1>v-for实例</h1>
 <hr>
 <div id="app">
-    <div v-if="isLogin"></div>
-    <div v-else>请登录后操作</div>
-    <div v-show="isLogin">你好:ptto</div>
+    <ul>
+        <li v-for="student in students">{{student.name}} : {{student.age}}</li>
+    </ul>
 </div>
 <script>
     var app =new Vue({
         el: '#app',
         data: {
-           isLogin:false
+            students:[{name:"杨幂",age:36},{name:"唐嫣",age:34},{name:"郑爽",age:28}]
         }
     })
 </script>
